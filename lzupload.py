@@ -18,7 +18,7 @@ def handle(fid, is_file):
         if fileDetail.code == LanZouCloud.SUCCESS:
             print("{\"upload\":\"success\",\"url\":\"%s\"}" % (fileDetail.url))
             exit(0)
-        elif fileDetail.code == LanZouCloud.NETWORK_ERROR:
+        else:
             print("{\"upload\":\"failed\",\"code\":\"%s\"}" % (fileDetail.code))
             exit(0)
 
