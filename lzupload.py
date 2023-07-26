@@ -1,7 +1,6 @@
 from lanzou.api import LanZouCloud
 import sys
 lanzou = LanZouCloud()
-lanzou.ignore_limits()
 cookie = {'ylogin': sys.argv[1], 'phpdisk_info': sys.argv[2]}
 if lanzou.login_by_cookie(cookie) != LanZouCloud.SUCCESS:
     print("{\"login\":\"failed\"}")
