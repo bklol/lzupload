@@ -1,7 +1,8 @@
 <?php
 
-function LZ_Create_Folder($folderName, $cookie ,$Parent_id = -1)
+function LZ_Create_Folder($folderName, $ylogin, $phpdisk_info ,$Parent_id = -1)
 {
+	$cookie = "ylogin=$ylogin;phpdisk_info=$phpdisk_info";
     $url = 'https://pc.woozooo.com/doupload.php?parent_id='.$Parent_id;
     $postData = [
         'task' => '2',
@@ -28,10 +29,9 @@ function LZ_Create_Folder($folderName, $cookie ,$Parent_id = -1)
         return $response['text'];
 }
 
-function LZ_Upload_File($filePath, $folderName, $ylogin, $phpdisk_info)
+function LZ_Upload_File($filePath, $folderId = -1, $ylogin, $phpdisk_info)
 {
     $cookie = "ylogin=$ylogin;phpdisk_info=$phpdisk_info";
-    $folderId = LZ_Create_Folder($folderName, $cookie);
     $url = 'https://up.woozooo.com/html5up.php';
     $fileContent = file_get_contents($filePath);
 
