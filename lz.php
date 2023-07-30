@@ -1,11 +1,11 @@
 <?php
 
-function LZ_Create_Folder($folderName, $cookie)
+function LZ_Create_Folder($folderName, $cookie ,$Parent_id = -1)
 {
-    $url = 'https://pc.woozooo.com/doupload.php?parent_id=-1';
+    $url = 'https://pc.woozooo.com/doupload.php?parent_id='.$Parent_id;
     $postData = [
         'task' => '2',
-        'folder_id' => -1,
+        'folder_id' => $Parent_id,
         'folder_name' => $folderName,
     ];
     $headers = [
