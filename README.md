@@ -1,9 +1,12 @@
-# lzupload
+# py
+
 上传蓝奏云脚本  
 `pip install lanzou-api`  
-`py lzupload.py ylogin_cookie phpdisk_info_cookie dirname filename`  
+`python lzupload.py ylogin_cookie phpdisk_info_cookie dirname filename`  
 ---------------------------------------------------------------------------
-# php 伪代码:  
+# php:  
 `include_once('lz.php');`  
-`folderid = LZ_Create_Folder(folderName, ylogin_cookie, phpdisk_info_cookie ,Parent_id)`  
-`url = LZ_Upload_File(filename, folderid, ylogin_cookie, phpdisk_info_cookie);` //如果为-1 上传失败
+`$ylogin = 'your ylogin cookie';`  
+`$phpdisk_info = 'your phpdisk_info cookie';`  
+`$folderid = LZ_Create_Folder('测试文件夹', $ylogin, $phpdisk_info, -1 , '这是测试文件夹注释');`  
+`echo $url = LZ_Upload_File('1.rar', $folderid, $ylogin, $phpdisk_info);`  
