@@ -2,7 +2,7 @@
 
 function LZ_Create_Folder($folderName, $ylogin, $phpdisk_info ,$Parent_id = -1)
 {
-	$cookie = "ylogin=$ylogin;phpdisk_info=$phpdisk_info";
+    $cookie = "ylogin=$ylogin;phpdisk_info=$phpdisk_info";
     $url = 'https://pc.woozooo.com/doupload.php?parent_id='.$Parent_id;
     $postData = [
         'task' => '2',
@@ -88,8 +88,8 @@ function LZ_Upload_File($filePath, $folderId = -1, $ylogin, $phpdisk_info)
     curl_setopt_array($ch, $options);
     $response = json_decode(curl_exec($ch), true);
     curl_close($ch);
-	if($response['zt'] != 1)
-		return -1;
-	else
-		return $response['text'][0]['is_newd'].'/'.$response['text'][0]['f_id'];
+    if($response['zt'] != 1)
+        return -1;
+    else
+        return $response['text'][0]['is_newd'].'/'.$response['text'][0]['f_id'];
 }
