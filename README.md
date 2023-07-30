@@ -5,7 +5,7 @@
 `python lzupload.py ylogin_cookie phpdisk_info_cookie dirname filename`  
 ---------------------------------------------------------------------------
 # php:  
-`include_once('lz.php');`
+`include_once('lz.php');`  
 `$ylogin = '';`  
 `$phpdisk_info = '';`  
 `$cookie = MakeCookie($ylogin, $phpdisk_info);`  
