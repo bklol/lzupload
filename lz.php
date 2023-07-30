@@ -1,6 +1,4 @@
-<?php
-
-function LZ_Create_Folder($folderName, $ylogin, $phpdisk_info ,$Parent_id = -1)
+function LZ_Create_Folder($folderName, $ylogin, $phpdisk_info ,$Parent_id = -1, $folder_description = 'def description creatby bklol')
 {
     $cookie = "ylogin=$ylogin;phpdisk_info=$phpdisk_info";
     $url = 'https://pc.woozooo.com/doupload.php?parent_id='.$Parent_id;
@@ -8,6 +6,7 @@ function LZ_Create_Folder($folderName, $ylogin, $phpdisk_info ,$Parent_id = -1)
         'task' => '2',
         'folder_id' => $Parent_id,
         'folder_name' => $folderName,
+        'folder_description'=> $folder_description
     ];
     $headers = [
         'Cookie: ' . $cookie,
