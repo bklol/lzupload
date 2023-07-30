@@ -1,6 +1,6 @@
-function LZ_Create_Folder($folderName, $ylogin, $phpdisk_info ,$Parent_id = -1, $folder_description = 'def description creatby bklol')
+ini_set('memory_limit', '210M');//big file lol
+function LZ_Create_Folder($folderName, $cookie ,$Parent_id = -1, $folder_description = 'def description creatby bklol')
 {
-    $cookie = "ylogin=$ylogin;phpdisk_info=$phpdisk_info";
     $url = 'https://pc.woozooo.com/doupload.php?parent_id='.$Parent_id;
     $postData = [
         'task' => '2',
@@ -28,9 +28,8 @@ function LZ_Create_Folder($folderName, $ylogin, $phpdisk_info ,$Parent_id = -1, 
         return $response['text'];
 }
 
-function LZ_Upload_File($filePath, $folderId = -1, $ylogin, $phpdisk_info)
+function LZ_Upload_File($filePath, $folderId = -1, $cookie)
 {
-    $cookie = "ylogin=$ylogin;phpdisk_info=$phpdisk_info";
     $url = 'https://up.woozooo.com/html5up.php';
     $fileContent = file_get_contents($filePath);
 
@@ -91,4 +90,9 @@ function LZ_Upload_File($filePath, $folderId = -1, $ylogin, $phpdisk_info)
         return -1;
     else
         return $response['text'][0]['is_newd'].'/'.$response['text'][0]['f_id'];
+}
+
+function MakeCookie($ylogin, $phpdisk_info)
+{
+    return "ylogin=$ylogin;phpdisk_info=$phpdisk_info";
 }
