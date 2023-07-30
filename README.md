@@ -3,6 +3,7 @@
 `pip install lanzou-api`  
 `py lzupload.py ylogin phpdisk_info dirname filename`  
 ---------------------------------------------------------------------------
-# php:  
+# php 伪代码:  
 `include_once('lz.php');`  
-`echo $url = LZ_Upload_File(filename, foldername, ylogin_cookie, phpdisk_info_cookie);`
+`folderid = LZ_Create_Folder(folderName, ylogin, phpdisk_info ,Parent_id)`  
+`url = LZ_Upload_File(filename, folderid, ylogin_cookie, phpdisk_info_cookie);` //如果为-1 上传失败
